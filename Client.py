@@ -10,7 +10,8 @@ class Client:
 
         bike = station.get_bike(type)
         if not bike:
-            return "no_bike"
+            low = any(b.bike_type == type and not b.is_usable() for b in station.bikes)
+            return "low_charge" if low else "no_bike"
 
         price = bike.get_trip_price(minutes)
         if price > self.balance:
