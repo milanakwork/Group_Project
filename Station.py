@@ -6,7 +6,7 @@ class Station:
 
     def get_bike(self, type):
         for bike in self.bikes:
-            if bike.bike_type == type:
+            if bike.bike_type == type and bike.is_usable():
                 self.bikes.remove(bike)
                 return bike
 
