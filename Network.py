@@ -1,5 +1,7 @@
 from Station import Station
-class Network():
+
+
+class Network:
     def __init__(self):
         self.stations = []
 
@@ -10,4 +12,4 @@ class Network():
         return self.stations
 
     def get_profit(self):
-        sum(station.balance for station in self.stations)
+        return sum(station.balance for station in self.stations)
