@@ -10,4 +10,4 @@ class Network():
         return self.stations
 
     def get_profit(self):
-        sum(station.balance for station in self.stations)
+        return sum(station.balance for station in self.stations)
