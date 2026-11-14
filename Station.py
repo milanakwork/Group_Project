@@ -14,4 +14,4 @@ class Station:
         return None
 
     def add_bike(self, bike):
-        pass
+        self.bikes.append(bike)
