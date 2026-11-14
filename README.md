@@ -25,3 +25,11 @@ Class methods: rent, subtract money
 | Station | bikes                       | get_bike(self, type), add_bike(self, bike: Bike)          |
 | Bike    | type, price                 | get_trip_price(self, n)                                   |
 | Network | stations, balance           |                                                           |
+
+## Files and Structure
+
+| Role  | Responsible for                | Responsible person |
+| ----- | ------------------------------ | ------------------ |
+| Role1 | Stations and bikes             | Milana Karatash    |
+| Role2 | Client, balancem, main         | Hlib Tataryntsev   |
+| Role3 | Network and profit calculation | Illia Radkivskyi   |
