@@ -17,3 +17,8 @@ class Client:
         station.add_balance(price_need)
         self.current_bike = bike
         self.balance -= price_need
+
+    def add_to_balance(self, money):
+        if money < 0:
+            return
+        self.balance += money
