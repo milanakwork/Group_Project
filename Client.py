@@ -5,18 +5,27 @@ class Client:
         self.current_bike = None
 
     def rent_bike(self, type, station, minutes):
+        if self.current_bike:
+            return "already_renting"
+
         bike = station.get_bike(type)
-        if not bike or self.current_bike:
-            return
+        if not bike:
+            return "no_bike"
 
-        price_need = bike.get_trip_price(minutes)
-        if price_need > self.balance:
+        price = bike.get_trip_price(minutes)
+        if price > self.balance:
             station.add_bike(bike)
-            return
+            return "no_money"
 
-        station.add_balance(price_need)
+        self.balance -= price
+        station.add_balance(price)
         self.current_bike = bike
-        self.balance -= price_need
+        return "ok"
+
+    def return_bike(self, station):
+        if self.current_bike:
+            station.add_bike(self.current_bike)
+            self.current_bike = None
 
     def add_to_balance(self, money):
         if money < 0:
